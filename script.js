@@ -23,5 +23,6 @@ function declension(forms, val) {
 var bdayDiv = document.getElementById('bdayDiv');
 for (let elem of data) {
   var d= daysUntilNext(elem.month, elem.day);
+  if(d < 8 && d > 0 ) bdaydiv.insertAdjacentHTML('beforeend', '<div>Через '+d+' '+declension([ 'день', 'дня', 'дней' ], d)+' день рождение у '+elem.name+'</div>');
   if(d === 0 ) bdayDiv.insertAdjacentHTML('beforeend', '<div>Сегодня день рождения у '+elem.name+'</div>');
 }
